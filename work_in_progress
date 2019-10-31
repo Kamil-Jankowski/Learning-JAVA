@@ -1,0 +1,33 @@
+    private static void placeMarkOnTheGrid(char[][] gameField, int row, int col) throws Exception{
+        int[] counter = countOccurences(gameField);
+        int xCount = counter[0], oCount = counter[1];
+        if (gameField[row][col] != 'X' && gameField[row][col] != 'O') {
+            gameField[row][col] = xCount <= oCount ? 'X' : 'O';
+        } else {
+            throw new Exception();
+        }
+    }
+    
+    private int[] countOccurences(char[][] field){
+        int[] numberOfXAndO = new int[2];
+        for (char[] rows : field) {
+            for (char elementInARow : rows) {
+                if (elementInARow == 'X') {
+                   numberOfXAndO[0]++; // X
+                } else if (elementInARow == 'O') {
+                   numberOfXAndO[1]++;
+                }
+            }
+        }
+        return numberOfXAndO;
+    }
+
+    private static boolean checkIfPossible(char[][] gameField) {
+        if (checkWinner(gameField, 'X') && checkWinner(gameField, 'O')){        // there can not be two winners
+           return false;
+        }
+        int[] counter = countOccurences(gameField);
+        int countX = counter[0], countO = counter[1];
+        // difference between signs occurence cannot be greater than 1:
+        return countX - countO == 0 || countX - countO == 1 || countX - countO == -1;
+    }
