@@ -103,7 +103,7 @@ class DoublyLinkedList<E>{
 ----
 
 == Task 2. Even or Odd
-Using DoublyLinkedList class you created, write a program, that reads input from the console and inserts even numbers at the beginning, and odd numbers at the back if command is +, and removes first node from the front (rl) or from the tail (rr).
+Using DoublyLinkedList class you created, write a program, that reads input from the console and inserts even numbers at the beginning, and odd numbers at the back if command is +, and removes first node from the front (- l) or from the tail (- r).
 
 Sample input:
 ----
@@ -114,9 +114,9 @@ Sample input:
 + 5
 + 6
 + 7
-rr
-rl
-rl
+- r
+- l
+- l
 ----
 
 Sample output:
@@ -135,29 +135,35 @@ Input: the first line contains two numbers N<1000N<1000 and K<1000K<1000 – the
 Output: In the first line, print the resulting list after all removals. The first element of the initial list must be to the left of all other elements of the resulting list.
 
 Sample Input 1:
-
+----
 5 2
 1 2 3 4 5
 r 1
 r 1
+----
 Sample Output 1:
-
+----
 1 3 5
+----
 Sample Input 2:
-
+----
 5 2
 5 9 4 8 11
 l 1
 r 1
+----
 Sample Output 2:
-
+----
 9 4 8
+----
 Sample Input 3:
-
+----
 4 2
 23 22 21 20
 r 1
 l 2
+----
 Sample Output 3:
-
+----
 23 21
+----

@@ -493,6 +493,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <img src="ddl-removing.png" alt="Removal" width="640">
 </div>
 </div>
+<div class="paragraph">
+<p>A doubly linked list is an unbound linear data structure like a singly linked list, but it provides more flexibility and optimizes some basic operations because it uses an additional reference between the nodes. This is the main reason why this kind of lists is common in standard libraries of many programming languages. But there is one drawback: storing additional references requires more space.</p>
+</div>
 </div>
 <div class="sect1">
 <h2 id="_task_1_basic_operations">Task 1. Basic operations</h2>
@@ -598,12 +601,33 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="_task_2_even_or_odd">Task 2. Even or Odd</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Using DoublyLinkedList class you created, write a program, that reads input from the console and inserts even numbers at the beginning, and odd numbers at the back.</p>
+<p>Using DoublyLinkedList class you created, write a program, that reads input from the console and inserts even numbers at the beginning, and odd numbers at the back if command is +, and removes first node from the front (- l) or from the tail (- r).</p>
+</div>
+<div class="paragraph">
+<p>Sample input:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>+ 1
++ 2
++ 3
++ 4
++ 5
++ 6
++ 7
+- r
+- l
+- l</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sample output:
+<code>(6) (4) 2 1 3 5 (7)</code></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_zadanie_3">Zadanie 3.</h2>
+<h2 id="_task_3_circular_list">Task 3. Circular list</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>You are given a circular list. Initially, the pointer is on the first element. You receive commands for removing elements at different distances to the left or the right from the current one. After an element is removed, the pointer is set right after this element in the traversal direction.</p>
@@ -611,17 +635,82 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Input: the first line contains two numbers N&lt;1000N&lt;1000 and K&lt;1000K&lt;1000 – the number of elements in the list and the number of commands. The second line contains the elements of the list. The following KK lines represent one of the two commands:</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>«r value» removes the element on the right by ‘value’ elements;</p>
+</li>
+<li>
+<p>«l value» removes the element on the left by ‘value’ elements.</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p>«r value» removes the element on the right by ‘value’ elements;
-«l value» removes the element on the left by ‘value’ elements.
-Output: In the first line, print the resulting list after all removals. The first element of the initial list must be to the left of all other elements of the resulting list.</p>
+<p>Output: In the first line, print the resulting list after all removals. The first element of the initial list must be to the left of all other elements of the resulting list.</p>
+</div>
+<div class="paragraph">
+<p>Sample Input 1:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>5 2
+1 2 3 4 5
+r 1
+r 1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sample Output 1:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>1 3 5</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sample Input 2:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>5 2
+5 9 4 8 11
+l 1
+r 1</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sample Output 2:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>9 4 8</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sample Input 3:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>4 2
+23 22 21 20
+r 1
+l 2</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sample Output 3:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>23 21</pre>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-10-05 22:35:01 +0200
+Last updated 2020-10-06 07:50:04 +0200
 </div>
 </div>
 </body>
